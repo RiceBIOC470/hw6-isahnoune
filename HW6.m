@@ -280,7 +280,6 @@ random2_normalized = reshape(s + mean1,size(random));
 
 N = 10;
 for i = 1:N
-    
     randindex = randperm(i);
     gauss1 = random1_normalized(randindex);
     randindex1 = randperm(i);
@@ -302,13 +301,12 @@ for i=0:10 %Gaussian numbers for second distribution
     random2 = random(:) - mean(random(:));
     s = random2/std(random2)*std1;
     random2_normalized = reshape(s + mean1,size(random));
-
     [mean(random2_normalized(:)),std(random2_normalized(:))]
 end
+plot(1:N,pval);
 
-% When the mean of the second distribution is 0, the plot slopes down and then reaches 1. All the other points are downward sloping towards
-% 0.
-
+% When the mean of the second distribution is 0, the plot slopes down and
+% then tapers off.
 
 % Part 3. Now keep the means of the two distributions at 0 and 1 as in part
 % 1, but vary the variance of both distributions simultaneiously between 0.1 and 10 and plot the 
@@ -316,24 +314,21 @@ end
 
 for i=0.1:0.1:10
 
-    mean1 = 0; %first distribution
-    std1 = i;
+    mean1 = 0;  std1 = i; %first distribution
     random = randn(10);
     random = sort(random);
     random1 = random(:) - mean(random(:));
     s = random1/std(random1)*std1;
     random1_norm = reshape(s + mean1,size(random));
 
-    mean2 = 1; %second distribution
-    std2 = i;
+    mean2 = 1; std2 = i; %second distribution
     random = randn(10);
     random2 = random(:) - mean(random(:));
     s = random2/std(random2)*std2;
     random2_normalized = reshape(s + mean2,size(random));
     
     for j=0:10
-        mean1 = j;
-        std1 = 1;
+        mean1 = j; std1 = 1;
         random = randn(10);
         random2 = random(:) - mean(random(:));
         s = random2/std(random2)*std1;

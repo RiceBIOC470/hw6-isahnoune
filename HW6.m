@@ -1,5 +1,17 @@
 %HW6
 
+%GB comments
+1a 95 no plot labels
+1b 95 no plot labels
+1c 95 no plot labels
+1d 95 no plot labels.  It is not the interval but the noise that is growing. 
+1e 75 No graph labels. No comments on the results
+2a 95 no plot labels
+2b 90 no plot labels. Also your comment tells us the same information the graph provides. Why does this occur though? Why is it special? 
+2c 75 not plot labels. No comments explaining the results. 
+Overall: 89
+
+
 % Problem 1. Curve fitting. 
 % Part 1. Take 10 x values on the interval 0 < x <= 10 and then create y
 % values from the x values by plugging the x values into a third order
